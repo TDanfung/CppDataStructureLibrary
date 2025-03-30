@@ -49,4 +49,17 @@ template<typename V, typename E> Vertex<V, E>* Edge<V, E>::getV2() {
 	return this->v2;
 }
 
+template<typename V, typename E> Vertex<V, E>* Edge<V, E>::getOpposite(Vertex<V,E>* v) {
+	if (this->v1 == v) {
+		return this->v2;
+	}
+	else if (this->v2 == v) {
+		return this->v1;
+	}
+	else {
+		return nullptr;
+	}
+}
+
+
 

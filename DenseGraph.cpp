@@ -16,8 +16,6 @@ template<typename V, typename E> DenseGraph<V, E>::DenseGraph() {
 	this->vertexNumber = 0;
 }
 
-
-
 template<typename V, typename E> void DenseGraph<V, E>::addVertex(V v1) {
 	
 	//매개변수로 들어온 값에 대한 새로운 버텍스 생성
@@ -101,10 +99,16 @@ template<typename V, typename E> void DenseGraph<V, E>::showEdgeMap() {
 			Vertex<V, E>* v1 = edge->getV1();
 			Vertex<V, E>* v2 = edge->getV2();
 
-			std::cout << "( " << v1->getData() << " , " << v2->getData() << ")";
+			std::cout << "( " << v1->getData() << " , " << v2->getData() << " )";
 		}
 		std::cout << "" << std::endl;
 	}
 }
 
+template<typename V, typename E> LRUAL<LRUAL<Edge<V, E>*>*>* DenseGraph<V, E>::getEdgeMap() {
+	return this->edgeMap;
+}
 
+template<typename V, typename E> LinkedList<Vertex<V, E>*>* getVertices() {
+	return this->vertex;
+}

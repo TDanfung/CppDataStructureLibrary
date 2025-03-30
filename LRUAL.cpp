@@ -87,6 +87,10 @@ template <typename T> LRUAL<T>::~LRUAL() {
 
 
 //getter
+template <typename T> int	LRUAL<T>::getLastIndex() {
+	return this->index;
+}
+
 template <typename T> T		LRUAL<T>::get(int index) {
 
 	if (index < 0 || this->index < index) {

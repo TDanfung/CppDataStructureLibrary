@@ -37,7 +37,7 @@ template <typename T> void LinkedList<T>::prepend(T data) {
 
 }
 
-template <typename T> void LinkedList<T>::queue(T data) {
+template <typename T> void inline LinkedList<T>::enqueue(T data) {
 	this->prepend(data);
 }
 
@@ -60,7 +60,7 @@ template <typename T> void LinkedList<T>::add(T data) {
 }
 
 //getter
-template <typename T> T LinkedList<T>::pop() {
+template <typename T> T LinkedList<T>::dequeue() {
 
 	if (this->head == nullptr) {
 		return 0;
@@ -81,7 +81,7 @@ template <typename T> T LinkedList<T>::pop() {
 
 }
 
-template <typename T> T LinkedList<T>::dequeue() {
+template <typename T> T LinkedList<T>::pop() {
 
 	if (this->tail == nullptr) {
 		return 0;
@@ -100,4 +100,8 @@ template <typename T> T LinkedList<T>::dequeue() {
 
 	return dequeuedData;
 
+}
+
+template <typename T> bool LinkedList<T>::isEmpty() {
+	return this->head == nullptr;
 }
