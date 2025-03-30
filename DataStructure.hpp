@@ -36,6 +36,7 @@ class LinkedList : public List<T> {
 private:
 	LinkedNode<T>* head;
 	LinkedNode<T>* tail;
+	int length;
 
 public:
 	LinkedList();
@@ -47,11 +48,15 @@ public:
 	void add(T data);
 	void append(T data);
 	void prepend(T data);
-	void queue(T data);
+	void enqueue(T data);
+	void setHeadTailNull();
 	
 	T pop();
 	T dequeue();
+	T dequeueMin();
 	T remove(T elem);
+
+	bool isEmpty();
 
 };
 
@@ -86,6 +91,7 @@ public:
 	void add(T data);
 	T remove(int index);
 	T get(int index);
+	int getLastIndex();
 	//void show();
 
 };
@@ -122,6 +128,8 @@ public:
 	E getData();
 	Vertex<V, E>* getV1();
 	Vertex<V, E>* getV2();
+	Vertex<V, E>* getOpposite(Vertex<V,E>* v);
+
 };
 
 
@@ -138,7 +146,8 @@ public:
 	~DenseGraph();
 	void addVertex(V v1);
 	void showEdgeMap();
-
+	LRUAL<LRUAL<Edge<V, E>*>*>* getEdgeMap();
+	LinkedList<Vertex<V, E>*>* getVertices();
 
 };
 
